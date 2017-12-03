@@ -1,0 +1,64 @@
+\input{../../_common/preamble}
+
+\title{Introduction to C and C++}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{What is C++?}
+    \begin{block}{C++ is\ldots}
+        \begin{itemize}
+            \item A general\hyp{}purpose programming language
+            \item Imperative (like C) but also object\hyp{}oriented
+            \item Designed for performance and flexibility
+            \item Standardised by ISO
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Why C++?}
+    \begin{itemize}
+        \item Widely used
+        \item Fast and portable
+        \item Many libraries (especially for scientific computing)
+        \item Full access to existing C and FORTRAN code
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Compiling and running}
+    \begin{block}{You'll need\ldots}
+        \begin{enumerate}
+            \item A \alert{text editor} (or \alert{IDE}) to write code in
+            \item A \alert{compiler} to turn what you write into machine code
+        \end{enumerate}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Hello world!}
+    \begin{cpp}
+        #include <iostream>
+
+        using namespace std;
+
+        int main()
+        {
+            // Print "Hello world" to standard output
+            cout << "Hello world!" << endl;
+            return 0;
+        }
+    \end{cpp}
+\end{frame}
+
+\begin{frame}{Semicolons everywhere}
+    \begin{block}{Don't forget the semicolon\alert{;}}
+        \begin{itemize}
+            \item Semicolons denote the end of a statement\alert{;}
+            \item If you wanted, you could put all your code on a single line\alert{;}
+            \item That's why the compiler needs semicolons\alert{;}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\end{document}
+
