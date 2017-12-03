@@ -1,0 +1,255 @@
+\input{../../_common/preamble}
+
+\title{C++ fundamentals}
+\subtitle{Part 1}
+
+\begin{document}
+
+\maketitle
+
+\section{Variables and types}
+
+\begin{frame}[fragile]{Variables}
+    \vspace{1em}
+    \begin{itemize}
+        \item Used to store mutable values
+        \item Must have a \alert{type} and a \alert{name}
+    \end{itemize}
+    \begin{cpp}
+        int x = 0;
+    \end{cpp}
+    \begin{center}
+        \begin{tabular}{lll}
+            \toprule
+            \textbf{Type}            & \textbf{Use}                & \textbf{Values} \\
+            \midrule
+            \mintinline{cpp}{bool}   & Booleans                    & \mintinline{cpp}{true}, \mintinline{cpp}{false} \\
+            \mintinline{cpp}{char}   & Characters                  & \mintinline{cpp}{'a'}, \mintinline{cpp}{'b'} \\
+            \mintinline{cpp}{int}    & Integers                    & \mintinline{cpp}{0}, \mintinline{cpp}{-1} \\
+            \mintinline{cpp}{double} & Floating\hyp{}point numbers & \mintinline{cpp}{0.1}, \mintinline{cpp}{1e-3} \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Arithmetic operators}
+    \vspace{1em}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Syntax}         & \textbf{Operation} \\
+            \midrule
+            \mintinline{cpp}{a = b} & Assignment \\
+            \mintinline{cpp}{a + b} & Addition \\
+            \mintinline{cpp}{a - b} & Subtraction \\
+            \mintinline{cpp}{a * b} & Multiplication \\
+            \mintinline{cpp}{a / b} & Division \\
+            \mintinline{cpp}{a % b} & Modulo \\
+            \mintinline{cpp}{++a}   & Prefix increment \\
+            \mintinline{cpp}{a++}   & Postfix increment \\
+            \mintinline{cpp}{--a}   & Prefix decrement \\
+            \mintinline{cpp}{a--}   & Postfix decrement \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Integers}
+    \begin{block}{\mintinline{cpp}{int}s store integers}
+        \begin{cpp}
+            int x = 2.5;
+        \end{cpp}
+    \end{block}
+    \begin{block}{Watch for integer division!}
+        \begin{cpp}
+            int x = 2 / 3;
+            double y = 2.0 / 3.0;
+        \end{cpp}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Comparison operators}
+    \vspace{1em}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Syntax}          & \textbf{Operation} \\
+            \midrule
+            \mintinline{cpp}{a == b} & Equal to \\
+            \mintinline{cpp}{a != b} & Not equal to \\
+            \mintinline{cpp}{a < b}  & Less than \\
+            \mintinline{cpp}{a > b}  & Greater than \\
+            \mintinline{cpp}{a <= b} & Less than or equal to \\
+            \mintinline{cpp}{a >= b} & Greater than or equal to \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Assignment and equality operators}
+    \begin{block}{Assignment operator}
+        \begin{cpp}
+            int x = 0;
+            int y = x - 1;
+        \end{cpp}
+    \end{block}
+    \begin{block}{Equality operator}
+        \begin{cpp}
+            int x = 0;
+            int y = -1;
+            bool z = y == x - 1;
+        \end{cpp}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Logical operators}
+    \vspace{1em}
+    \begin{center}
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Syntax}           & \textbf{Operation} \\
+            \midrule
+            \mintinline{cpp}{!a}      & $\neg a$ \\
+            \mintinline{cpp}{a && b}  & $a \land b$ \\
+            \mintinline{cpp}{a || b}  & $a \lor b$ \\
+            \midrule
+            \mintinline{cpp}{a != b}  & $a \oplus b$ \\
+            \mintinline{cpp}{!a || b} & $a \implies b$ \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Spot the difference!}
+    \begin{center}
+        {\Large%
+         What's the difference between \\[1em]
+         \mintinline{cpp}{a!=b} and \mintinline{cpp}{a=!b}?}
+    \end{center}
+\end{frame}
+
+\section{Flow control}
+
+\begin{frame}[fragile]{If statements}
+    \begin{cpp}
+        if (condition1)
+        {
+            // ...
+        }
+        else if (condition2)
+        {
+            // ...
+        }
+        else
+        {
+            // ...
+        }
+    \end{cpp}
+\end{frame}
+
+
+\begin{frame}[fragile]{While loops}
+    \begin{cpp}
+        while (condition)
+        {
+            // ...
+        }
+    \end{cpp}
+    \vspace{-1em}
+    \begin{itemize}
+        \item \mintinline{cpp}{while} iterates until \mintinline{cpp}{condition}
+              is \mintinline{cpp}{false}
+        \item Careful with infinite loops!
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{For loops}
+    \vspace{0.5em}
+    \begin{cpp}
+        for (initialisation; condition; update)
+        {
+            // ...
+        }
+    \end{cpp}
+    \vspace{-2.5em}
+    \begin{cpp}
+        initialisation; // Executed only once
+        while (condition)
+        {
+            // ...
+            update;
+        }
+    \end{cpp}
+\end{frame}
+
+\section{Functions}
+
+\begin{frame}[fragile]{Functions}
+    \begin{onlyenv}<1>
+        \begin{itemize}
+            \item Functions encapsulate (reusable) bits of computation
+            \item They're defined in terms of their arguments and return value
+        \end{itemize}
+        \begin{cpp}
+            return_type function(type1 arg1, /*, ... */)
+            {
+                // ...
+                return value_of_return_type;
+            }
+        \end{cpp}
+    \end{onlyenv}
+    \begin{onlyenv}<2>
+        \begin{block}{Example}
+            \begin{cpp}
+                int power(int x, int n); // Prototype
+
+                int power(int x, int n)  // Declaration
+                {
+                    int result = 1;
+                    for (int i = 1; i <= n; i++)
+                    {
+                        result *= x;
+                    }
+                    return result;
+                }
+            \end{cpp}
+        \end{block}
+    \end{onlyenv}
+\end{frame}
+
+\begin{frame}[fragile]{Argument passing}
+    \begin{block}{Passing by value}
+        \begin{itemize}
+            \item Argument values are \alert{copied} by default
+            \item[$\rightarrow$] Modifying them inside the function has no
+                                 effect outside
+        \end{itemize}
+    \end{block}
+    \begin{block}{Passing by reference}
+        \begin{itemize}
+            \item Arguments can be referenced using \mintinline{cpp}{int& x}
+            \item[$\rightarrow$] Modifying them inside the function changes them
+                                 outside too!
+            \item Use \mintinline{cpp}{const int& x} to prevent changes
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Polymorphism}
+    \begin{cpp}
+        int power(int x, int n);
+        double power(double x, int n);
+    \end{cpp}
+    \vspace{-1em}
+    \begin{itemize}
+        \item These two functions can coexist!
+        \item The compiler `knows' which one to call from the arguments:
+              \begin{itemize}
+                  \item \mintinline{cpp}{power(2, 5)} calls the first version
+                  \item \mintinline{cpp}{power(2.5, 2)} calls the second version
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\end{document}
+
