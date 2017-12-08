@@ -1,0 +1,105 @@
+\input{../../_common/preamble}
+
+\title{Memory management}
+
+\begin{document}
+
+\maketitle
+
+\section{Arrays}
+
+\begin{frame}[fragile]{Arrays}
+    \begin{onlyenv}<1>
+        \begin{block}{Arrays\ldots}
+            \begin{itemize}
+                \item Are \alert{fixed\hyp{}size} lists of elements
+                \item Can only store one type
+                \item Are indexed starting at 0
+            \end{itemize}
+        \end{block}
+        \begin{cpp}
+            int[5] x = {0, 1, 2, 3, 5};
+            x[0] = 1;
+        \end{cpp}
+    \end{onlyenv}
+    \begin{onlyenv}<2>
+        \begin{itemize}
+            \item The size of arrays must be known at compile time
+            \item Arrays can also be \alert{allocated dynamically}
+        \end{itemize}
+        \begin{cpp}
+            int n = 5;
+            int* x = new int[n];
+
+            // Don't forget to free the memory!
+            delete[] x;
+        \end{cpp}
+    \end{onlyenv}
+\end{frame}
+
+\begin{frame}[fragile]{Memory leaks}
+    \begin{block}{Memory leaks\ldots}
+        \begin{itemize}
+            \item Occur when dynamically allocated memory is not released
+            \item Can slow down the entire system significantly!
+            \item Are particularly problematic for long\hyp{}running
+                  applications
+        \end{itemize}
+    \end{block}
+    \begin{block}{C++11 introduced \alert{smart pointers}:}
+        \begin{itemize}
+            \item \mintinline{cpp}{unique_ptr} cannot be copied
+            \item \mintinline{cpp}{shared_ptr} can be copied
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\section{Pointers}
+
+% Example of pointers to stack that go out of scope in code!
+
+\begin{frame}[fragile]{Pointers}
+    \begin{onlyenv}<1>
+        \begin{block}{Pointers\ldots}
+            \begin{itemize}
+                \item Point to some memory location (static or dynamic)
+                \item Are declared using the type of the `pointee' followed by
+                      \mintinline{cpp}{*}
+                \item Can point to anything using \mintinline{cpp}{void*}
+            \end{itemize}
+        \end{block}
+        \begin{cpp}
+            int* x = new int;
+        \end{cpp}
+    \end{onlyenv}
+    \begin{onlyenv}<2>
+        \begin{block}{Dereference operator \mintinline{cpp}{*}}
+            \begin{itemize}
+                \item `Follows' a pointer to the pointee
+                \item Make sure you know what's on the other side!
+            \end{itemize}
+            \begin{cpp}
+                int* x = new int;
+                *x = 5;
+
+                int* y;
+                *y = 5; // Boom!
+            \end{cpp}
+        \end{block}
+    \end{onlyenv}
+    \begin{onlyenv}<3>
+        \begin{block}{Address-of operator \mintinline{cpp}{&}}
+            \begin{itemize}
+                \item Creates a new pointer to an existing variable
+                \item Careful with static memory!
+            \end{itemize}
+            \begin{cpp}
+                int x = 5;
+                int x_ptr = &x;
+            \end{cpp}
+        \end{block}
+    \end{onlyenv}
+\end{frame}
+
+\end{document}
+
