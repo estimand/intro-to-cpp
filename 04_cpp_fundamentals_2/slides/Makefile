@@ -1,0 +1,9 @@
+
+all: cpp_fundamentals_2.pdf
+
+%.pdf: %.tex
+	latexmk -pdf -pdflatex="xelatex --shell-escape" -use-make $<
+
+clean:
+	latexmk -CA
+
