@@ -1,0 +1,81 @@
+\input{../../_common/preamble}
+
+\title{Object-oriented programming}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Classes and objects}
+    \begin{block}{Class}
+        \begin{itemize}
+            \item The blueprint for an object
+            \item Encapsulates \alert{state} and \alert{behaviour}
+        \end{itemize}
+    \end{block}
+    \begin{block}{Object}
+        \begin{itemize}
+            \item An instance of a class
+            \item Holds data and functions
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Abstraction}
+    \begin{block}{Classes should\ldots}
+        \begin{itemize}
+            \item Provide only essential information to the external world
+            \item Hide any internal implementation details
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Inheritance and polymorphism}
+    \begin{block}{Classes can\ldots}
+        \begin{itemize}
+            \item Reuse code by inheriting from another class
+            \item Redefine functions through polymorphism
+            \item Define the meaning of operators through overloading
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Defining a new class}
+    \begin{onlyenv}<1>
+        \begin{block}{Definition}
+            \begin{cpp}
+                class Rectangle {
+                    int width, height;
+                    public:
+                        Rectangle(int, int);
+                        int area(void);
+                }; // Mind the semicolon!
+            \end{cpp}
+        \end{block}
+    \end{onlyenv}
+    \begin{onlyenv}<2>
+        \begin{block}{Implementation}
+            \begin{cpp}
+                Rectangle::Rectangle(int w, int h) {
+                    width = w;
+                    height = h;
+                }
+
+                Rectangle::area() {
+                    return width * height;
+                }
+            \end{cpp}
+        \end{block}
+    \end{onlyenv}
+\end{frame}
+
+\begin{frame}[fragile]{Don't overuse classes and objects!}
+    \begin{itemize}
+        \item OOP can be overkill (especially for small programs)
+        \item Classes make your code more verbose
+        \item Try \mintinline{cpp}{struct}s if you just need `data containers'
+    \end{itemize}
+\end{frame}
+
+\end{document}
+
