@@ -128,6 +128,22 @@
     \end{center}
 \end{frame}
 
+\begin{frame}[fragile]{Type conversion and casting}
+    \begin{block}{Type conversion (implicit)}
+        \begin{cpp}
+            double d = 3.5;
+            int i = d; // Truncated to 3 without warning!
+            cout << d << " " << i << endl;
+        \end{cpp}
+    \end{block}
+    \begin{block}{Casting (explicit)}
+        \begin{cpp}
+            double d = 3.5;
+            cout << d << " " << (int) d << endl;
+        \end{cpp}
+    \end{block}
+\end{frame}
+
 \section{Flow control}
 
 \begin{frame}[fragile]{If statements}
