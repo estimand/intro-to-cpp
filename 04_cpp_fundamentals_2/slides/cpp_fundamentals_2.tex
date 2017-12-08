@@ -1,0 +1,153 @@
+\input{../../_common/preamble}
+
+\title{C++ fundamentals}
+\subtitle{Part 2}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}[fragile]{Libraries}
+    \begin{itemize}
+        \item Standard ANSI C library (e.g.\ \mintinline{cpp}{cmath})
+        \item C++ libraries (e.g.\ \mintinline{cpp}{iostream})
+        \item Standard Template Library (e.g.\ \mintinline{cpp}{vector})
+        \item Third-party libraries
+    \end{itemize}
+\end{frame}
+
+\section{I/O streams}
+
+\begin{frame}[fragile]{Standard streams}
+    \mintinline{cpp}{iostream} declares the standard streams:
+    \begin{description}
+        \item[\mintinline{cpp}{cin}]  Standard input (keyboard)
+        \item[\mintinline{cpp}{cout}] Standard output (screen)
+        \item[\mintinline{cpp}{cerr}] Standard error (screen)
+    \end{description}
+    \begin{itemize}
+        \item[$\rightarrow$] \mintinline{cpp}{cin} is an
+                             \mintinline{cpp}{istream}
+        \item[$\rightarrow$] \mintinline{cpp}{cout} and \mintinline{cpp}{cerr}
+                             are \mintinline{cpp}{ostream}s
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{File streams}
+    \mintinline{cpp}{fstream} declares\ldots
+    \begin{itemize}
+        \item \mintinline{cpp}{ifstream} to read from files
+        \item \mintinline{cpp}{ofstream} to write to files
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{File input}
+    \begin{onlyenv}<1>
+        \begin{block}{Steps}
+            \begin{enumerate}
+                \item Construct an \mintinline{cpp}{istream}
+                \item Connect it to a file
+                \item Read from it using \mintinline{cpp}{<<}
+                \item Disconnect the file
+            \end{enumerate}
+        \end{block}
+    \end{onlyenv}
+    \begin{onlyenv}<2>
+        \begin{cpp}
+            #include <fstream>
+
+            ifstream input;
+            input.open(filename, mode);
+
+            // Alternatively:
+            ifstream input(filename, mode);
+
+            // ...
+
+            input.close()
+        \end{cpp}
+    \end{onlyenv}
+\end{frame}
+
+\begin{frame}[fragile]{File output}
+    \begin{onlyenv}<1>
+        \begin{block}{Steps}
+            \begin{enumerate}
+                \item Construct an \mintinline{cpp}{ostream}
+                \item Connect it to a file
+                \item Write to it using \mintinline{cpp}{>>}
+                \item Disconnect the file
+            \end{enumerate}
+        \end{block}
+    \end{onlyenv}
+    \begin{onlyenv}<2>
+        \begin{cpp}
+            #include <fstream>
+
+            ofstream output;
+            output.open(filename, mode);
+
+            // Alternatively:
+            ofstream output(filename, mode);
+
+            output.close()
+        \end{cpp}
+    \end{onlyenv}
+\end{frame}
+
+\section{Strings and vectors}
+
+\begin{frame}[fragile]{Strings}
+    \begin{itemize}
+        \item C represents strings as arrays of \mintinline{cpp}{char}s
+        \item In C++, \mintinline{cpp}{string} models character sequences
+        \item It also provides functions such as \mintinline{cpp}{length()}
+    \end{itemize}
+    \begin{cpp}
+        #include <string>
+
+        string s("Test");
+        cout << s.length() << endl;
+    \end{cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Vectors}
+    \begin{itemize}
+        \item \mintinline{cpp}{vector} represents dynamically\hyp{}sized vectors
+        \item It provides functions to add and remove elements
+    \end{itemize}
+    \begin{cpp}
+        #include <vector>
+
+        vector<int> v(10);
+        cout << v.length() << endl;
+    \end{cpp}
+\end{frame}
+
+\section{Useful third-party libraries}
+
+\begin{frame}{Boost}
+    \begin{itemize}
+        \item A large collection of general\hyp{}purpose libraries
+        \item Many have been incorporated in the C++ standard over the years
+    \end{itemize}
+    \begin{flushright}
+        \includegraphics[width=0.2\textwidth]{figures/boost}
+    \end{flushright}
+    \vspace{-2em}
+\end{frame}
+
+\begin{frame}{Libraries for scientific computing}
+    \begin{itemize}
+        \item ALGLIB
+        \item Armadillo
+        \item Blaze
+        \item Dlib
+        \item Eigen
+        \item NAG
+        \item \ldots
+    \end{itemize}
+\end{frame}
+
+\end{document}
+
