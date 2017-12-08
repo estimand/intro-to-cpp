@@ -56,12 +56,14 @@
     \begin{onlyenv}<2>
         \begin{block}{Implementation}
             \begin{cpp}
-                Rectangle::Rectangle(int w, int h) {
-                    width = w;
-                    height = h;
+                Rectangle::Rectangle(int width, int height)
+                {
+                    this->width = width;
+                    this->height = height;
                 }
 
-                Rectangle::area() {
+                int Rectangle::area()
+                {
                     return width * height;
                 }
             \end{cpp}
