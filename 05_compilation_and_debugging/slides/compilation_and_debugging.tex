@@ -1,0 +1,74 @@
+\input{../../_common/preamble}
+
+\title{Compilation and debugging}
+
+\begin{document}
+
+\maketitle
+
+\section{Compilation}
+
+\begin{frame}{Compilation steps}
+    \begin{enumerate}
+        \item Preprocessing
+        \item Compilation
+        \item Linking
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Preprocessing}
+    \begin{itemize}
+        \item Transforms lines starting with \mintinline{cpp}{#}
+        \item Mostly used to \mintinline{cpp}{#include} files
+        \item Another common usage are \mintinline{cpp}{#include} guards
+        \item Can also be used to \mintinline{cpp}{#define} macros
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Compilation}
+    \begin{itemize}
+        \item Transforms code to machine code
+        \item Itself composed of multiple steps:
+              \begin{enumerate}
+                  \item Parsing and type checking
+                  \item Non\hyp{}specific optimisation
+                        (e.g.\ dead code elimination)
+                  \item CPU\hyp{}specific optimisation
+                        (e.g.\ instruction scheduling)
+              \end{enumerate}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Linking}
+    \begin{itemize}
+        \item Combines multiple files into a final executable
+        \item Organises a program's address space (e.g.\ through relocation)
+        \item Two main strategies:
+              \begin{description}
+                  \item[Dynamic] (Some) libraries are loaded at runtime
+                  \item[Static]  All libraries are included
+              \end{description}
+    \end{itemize}
+\end{frame}
+
+\section{Debugging}
+
+\begin{frame}
+    \vfill
+    \begin{center}
+        {\Large%
+         Let's use a debugger!}
+    \end{center}
+    \vfill
+\end{frame}
+
+\begin{frame}{Other options}
+    \begin{itemize}
+        \item Assertions
+        \item Logging
+        \item Unit tests
+    \end{itemize}
+\end{frame}
+
+\end{document}
+
