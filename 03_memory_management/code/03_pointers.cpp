@@ -4,7 +4,7 @@ using namespace std;
 
 int* get_ptr_for_int(int value)
 {
-    return &value;  // Don't do this!
+    return &value; // Don't do this!
 }
 
 void print_int_ptr(const int* p)
