@@ -8,7 +8,7 @@
 
 \section{Arrays}
 
-\begin{frame}[fragile]{Arrays}
+\begin{frame}[fragile,t]{Arrays}
     \begin{onlyenv}<1>
         \begin{block}{Arrays\ldots}
             \begin{itemize}
@@ -25,7 +25,8 @@
     \begin{onlyenv}<2>
         \begin{itemize}
             \item The size of arrays must be known at compile time
-            \item Arrays can also be \alert{allocated dynamically}
+            \item Arrays (and other types) can also be
+                  \alert{allocated dynamically}
         \end{itemize}
         \begin{cpp}
             int n = 5;
@@ -56,9 +57,7 @@
 
 \section{Pointers}
 
-% Example of pointers to stack that go out of scope in code!
-
-\begin{frame}[fragile]{Pointers}
+\begin{frame}[fragile,t]{Pointers}
     \begin{onlyenv}<1>
         \begin{block}{Pointers\ldots}
             \begin{itemize}
@@ -94,8 +93,10 @@
                 \item Careful with static memory!
             \end{itemize}
             \begin{cpp}
-                int x = 5;
+                int x = 3;
                 int x_ptr = &x;
+
+                *x_ptr = 5;
             \end{cpp}
         \end{block}
     \end{onlyenv}
