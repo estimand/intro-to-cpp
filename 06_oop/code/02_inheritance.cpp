@@ -2,7 +2,14 @@
 
 using namespace std;
 
-class Rectangle {
+class Shape {
+    public:
+        Shape() {};
+        virtual ~Shape() {}; // Virtual destructor
+        virtual int area(void) = 0; // Pure virtual function
+};
+
+class Rectangle : public Shape {
     private:
         int width, height;
     public:
