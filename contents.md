@@ -12,7 +12,6 @@ The workshop is designed to be delivered over an entire day (including breaks).
 | C++ language basics (part 2)   | 60 minutes |
 | Compilation and debugging      | 60 minutes |
 | Object-oriented programming    | 60 minutes |
-| Making coding more enjoyable   | 15 minutes |
 
 ## Contents
 
