@@ -47,7 +47,6 @@ outputs the mean length of the longest run of heads.
 **Note**: this problem was part of the
 [2017 Qualification Round](https://code.google.com/codejam/contest/3264486/dashboard#s=p1)
 for the [Google Code Jam](https://code.google.com/codejam/) contest.
-
 Have a look at [past contests](https://code.google.com/codejam/past-contests)
 for many more challenging problems!
 
