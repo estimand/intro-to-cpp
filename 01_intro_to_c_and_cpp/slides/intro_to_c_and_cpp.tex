@@ -6,6 +6,72 @@
 
 \maketitle
 
+\begin{frame}{Thinking like a Computer Scientist}
+    \only<1>{%
+        \begin{block}{Computer Scientists\ldots}
+            \begin{itemize}
+                \item Use formal languages to denote ideas
+                \item Design things, assembling components into systems
+                \item Observe the behaviour of complex systems, form hypotheses,
+                      and test predictions
+            \end{itemize}
+        \end{block}}
+    \only<2>{%
+        \begin{center}
+            \Large%
+            What's the most important skill \\
+            for a Computer Scientist?
+        \end{center}}
+\end{frame}
+
+\begin{frame}{Algorithms}
+    \begin{itemize}
+        \setlength{\itemsep}{0.75em}
+        \item Step\hyp{}by\hyp{}step lists of instructions to solve a problem
+        \item Can be represented in a specific notation (programs)
+        \item Can be executed automatically by a computer
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Programs}
+    \begin{itemize}
+        \setlength{\itemsep}{0.75em}
+        \item Sequences of instructions that describes a computation
+        \item Basic instructions include:
+              \begin{itemize}
+                  \item Input/output
+                  \item Mathematical and logical operations
+                  \item Conditional execution (if\hyp{}then)
+                  \item Repetition
+              \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Let's write an algorithm!}
+    \begin{center}
+        \Large%
+        Compute the sum \\
+        of all even numbers \\
+        in a given list
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Our algorithm\ldots~in C++}
+    \begin{cpp}
+        const int n = 10;
+        int x[n] = {0, 1, 1, 2, 3, 5, 8, 13, 21, 34};
+
+        int result = 0;
+        for (int i = 0; i < n; i++)
+        {
+            if (x[i] % 2 == 0)
+            {
+                result += x[i];
+            }
+        }
+    \end{cpp}
+\end{frame}
+
 \begin{frame}{What is C++?}
     \begin{block}{C++ is\ldots}
         \begin{itemize}
