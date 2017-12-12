@@ -17,38 +17,44 @@
 \end{frame}
 
 \begin{frame}[fragile]{Preprocessing}
-    \begin{itemize}
-        \item Transforms lines starting with \mintinline{cpp}{#}
-        \item Mostly used to \mintinline{cpp}{#include} files
-        \item Another common usage are \mintinline{cpp}{#include} guards
-        \item Can also be used to \mintinline{cpp}{#define} macros
-    \end{itemize}
+    \begin{block}{The preprocessor\ldots}
+        \begin{itemize}
+            \item Transforms lines starting with \mintinline{cpp}{#}
+            \item Is mostly used to \mintinline{cpp}{#include} files
+            \item Can also be used to \mintinline{cpp}{#define} macros
+        \end{itemize}
+    \end{block}
 \end{frame}
 
 \begin{frame}{Compilation}
-    \begin{itemize}
-        \item Transforms code to machine code
-        \item Itself composed of multiple steps:
-              \begin{enumerate}
-                  \item Parsing and type checking
-                  \item Non\hyp{}specific optimisation
-                        (e.g.\ dead code elimination)
-                  \item CPU\hyp{}specific optimisation
-                        (e.g.\ instruction scheduling)
-              \end{enumerate}
-    \end{itemize}
+    \begin{block}{The compiler\ldots}
+        \begin{itemize}
+            \item Transforms code to machine code
+            \item Performs a series of steps:
+                  \begin{enumerate}
+                      \item Parsing and type checking
+                      \item Non\hyp{}specific optimisation
+                            (e.g.\ dead code elimination)
+                      \item CPU\hyp{}specific optimisation
+                            (e.g.\ instruction scheduling)
+                  \end{enumerate}
+        \end{itemize}
+    \end{block}
 \end{frame}
 
 \begin{frame}{Linking}
-    \begin{itemize}
-        \item Combines multiple files into a final executable
-        \item Organises a program's address space (e.g.\ through relocation)
-        \item Two main strategies:
-              \begin{description}
-                  \item[Dynamic] (Some) libraries are loaded at runtime
-                  \item[Static]  All libraries are included
-              \end{description}
-    \end{itemize}
+    \begin{block}{The linker\ldots}
+        \begin{itemize}
+            \item Combines multiple files into a final executable
+            \item Organises a program's address space (e.g.\ through relocation)
+            \item Uses two main strategies:
+                  \begin{description}
+                      \item[Dynamic] (Some) libraries are loaded at runtime
+                      \item[Static]  All libraries are included in the
+                                     executable
+                  \end{description}
+        \end{itemize}
+    \end{block}
 \end{frame}
 
 \section{Debugging}
