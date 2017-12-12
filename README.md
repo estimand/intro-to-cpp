@@ -8,15 +8,13 @@ This repository contains teaching materials (slides and code) for the Introducti
 
 ## Learning objectives
 * Understand and use the basic programming constructs of C and C++
-* Apply OOP techniques to software problems
 * Manipulate various C/C++ data structures such as arrays, strings, and pointers
 * Use memory appropriately (including allocation and deallocation)
+* Apply OOP techniques to software problems
 * Isolate and fix common C++ programming errors
 
 ## Additional resources
-
-* [Penguin Programmer's Beginner's Tutorial](http://www.penguinprogrammer.co.uk/c-beginners-tutorial/introduction/)
 * [C++ Language Tutorial](http://www.cplusplus.com/doc/tutorial/)
-* [Chua Hock Chuan's Programming Notes](https://www.ntu.edu.sg/home/ehchua/programming/)
-* [Learn C++](http://www.learncpp.com)
+* [Chua Hock Chuan's _Programming Notes_](https://www.ntu.edu.sg/home/ehchua/programming/)
+* Robert Nürnberg's _Computing in C++_ (parts [1](https://wwwf.imperial.ac.uk/~rn/teaching/ccourse.pdf) and [2](https://wwwf.imperial.ac.uk/~rn/teaching/oopc++.pdf))
 
