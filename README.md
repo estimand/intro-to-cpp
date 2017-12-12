@@ -15,6 +15,6 @@ This repository contains teaching materials (slides and code) for the Introducti
 
 ## Additional resources
 * [C++ Language Tutorial](http://www.cplusplus.com/doc/tutorial/)
-* [Chua Hock Chuan's _Programming Notes_](https://www.ntu.edu.sg/home/ehchua/programming/)
+* [Chua Hock Chuan's _Programming Notes_](https://www.ntu.edu.sg/home/ehchua/programming/#Cpp)
 * Robert Nürnberg's _Computing in C++_ (parts [1](https://wwwf.imperial.ac.uk/~rn/teaching/ccourse.pdf) and [2](https://wwwf.imperial.ac.uk/~rn/teaching/oopc++.pdf))
 
