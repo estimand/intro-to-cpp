@@ -33,5 +33,7 @@ int main()
             cout << "Go lower!" << endl;
         }
     }
+
+    return 0;
 }
 
